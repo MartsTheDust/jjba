@@ -1,0 +1,97 @@
+$screen-ratio: 100%;
+$duration : 0.60s;
+$jj-colors: 
+    #1167B1,
+    #90EE90,
+    #00008B,
+    #AA336A,
+    #FFC0CB,
+    #355E3B,
+    #ADD8E6,
+    #C21E56,
+    #DC582A;
+
+.flex {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.flex > div {
+    position: relative;
+    width: $screen-ratio / 9;
+    height: 100%;
+    margin: 0px;
+    transition: $duration;
+}
+
+.flex > div:hover {
+    width: $screen-ratio / 4;
+    transition: $duration;
+    cursor: pointer;
+}
+
+* img {
+    transition: $duration;
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+* img:hover {
+    overflow-x: visible;
+    transition: $duration;
+}
+
+.flex > div > img {
+    margin-top: 10vh;
+}
+
+// SELECTOR SECTION
+
+@mixin color-assign($index) {
+    background-color: nth($jj-colors, $index);
+}
+
+.flex > #part1 {
+    @include color-assign( 1 );
+}
+
+.flex > #part2 {
+    @include color-assign( 2 ); 
+}
+
+.flex > #part3 {
+    @include color-assign( 3 );
+
+    img {
+        margin-right: 50px;
+    }
+}
+
+.flex > #part4 {
+    @include color-assign( 4 ); 
+}
+
+.flex > #part5 {
+    @include color-assign( 5 );
+}
+
+.flex > #part6 {
+    @include color-assign( 6 ); 
+}
+
+.flex > #part7 {
+    @include color-assign( 7 ); 
+}
+
+.flex > #part8 {
+    @include color-assign( 8 );
+}
+
+.flex > #part9 {
+    @include color-assign( 9 ); 
+}
+
